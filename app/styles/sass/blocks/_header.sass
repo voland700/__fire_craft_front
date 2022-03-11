@@ -1,0 +1,273 @@
+.header_top
+	background-color: $grey
+	height: 26px
+	border-bottom: 3px solid darken($grey, 7%)
+	font-size: .8rem
+	font-weight: 700
+	color: #333
+
+.header_top_wrap
+	display: flex
+	justify-content: space-between
+	align-items: center
+.header_top_item
+
+.header_nav
+	background-color: $grey
+.header_nav_wrap
+	display: flex
+	justify-content: space-between
+.header_logo_wrap
+	width: 225px
+	height: 75px
+	flex-shrink: 0
+.header_logo_link
+	display: flex
+	align-items: center
+	height: 100%
+	text-decoration: none
+	&:hover,
+	&:focus
+		svg
+			fill: darken(#0f5897, 20%)
+		.logo_wrap
+			color: darken(#0f5897, 20%)
+
+
+.logo_svg
+	width: 55px
+	height: auto
+	margin-right: .5rem
+	svg
+		width: 100%
+		fill: $dark
+.logo_wrap
+	display: flex
+	flex-direction: column
+	color: $dark
+	box-sizing: border-box
+.logo_title
+	font-size: 1.7rem
+	font-weight: bold
+	line-height: 1.7rem
+.logo_subtitle
+	font-size: .75rem
+	font-style: italic
+	text-align: right
+
+
+
+
+.header_menu_wrap
+	position: relative
+
+.header_menu
+	display: flex
+	justify-content: flex-end
+	align-items: center
+	list-style: none
+	padding-left: 0
+	margin-bottom: 0
+	height: 100%
+.header_menu_item
+	height: 50px
+
+.header_menu_link
+	display: block
+	height: 100%
+	margin-left: 40px
+	font-size: .75rem
+	line-height: 50px
+	text-transform: uppercase
+	letter-spacing: 2px
+	text-decoration: none
+	color: #000
+	transition: color .27s cubic-bezier(0,0,.58,1)
+	&:hover,
+	&:focus
+		color: $dblue
+.header-menu-burgers
+	width: 35px
+	height: 35px
+	cursor: pointer
+
+.header-menu-burgers.btn-close
+	background: url(/images/src/icons/burgers.svg) no-repeat transparent center
+.header-menu-burgers.btn-open
+	background: url(/images/src/icons/closed.svg) no-repeat transparent center
+
+
+
+.header_search
+	background-color: $dark
+.header_search_wrap
+	display: flex
+	justify-content: space-between
+	align-items: center
+	padding-top: 7px
+	padding-bottom: 7px
+.header_search_btn_wrap
+.header_search_btn
+	display: inline-block
+	text-align: center
+	vertical-align: middle
+	cursor: pointer
+	background-image: none
+	border: 1px solid transparent
+	white-space: nowrap
+	padding: 5px 37px
+	line-height: 1.42857143
+	user-select: none
+	font-weight: 400
+	text-transform: uppercase
+	text-decoration: none
+	letter-spacing: 2px
+	border: 1px solid rgba(255,255,255,.75)
+	border-radius: 1px
+	font-size: .7rem
+	color: #fff
+	transition: all .2s cubic-bezier(0,0,.58,1)
+	&:hover
+		color: #111
+		border-color: transparent
+		background: #fff
+		font-weight: 400
+		text-decoration: none
+		outline: 0
+
+.search_form
+	display: flex
+.search_input
+	width: 333px
+	border-radius: 0
+	outline: 0
+	border: 1px solid #a5b3b4
+	border-top: 1px solid #ebf6f8
+	background: 0 0
+	text-indent: 10px
+	font-size: .8rem
+	font-style: italic
+	color: #ebf6f8
+	height: 28px
+	margin-right: 4px
+	&:focus:required:invalid
+		border-color: #ebf6f8
+	&:required:valid
+		border-color: darken(#ebf6f8, 3%)
+.search_btn
+	border: 1px solid #a5b3b4
+	border-top: 1px solid #ebf6f8
+	font-size: 12px
+	text-indent: -9999px
+	background: 0 0
+	background: url(/images/src/icons/search.svg) no-repeat transparent center
+	background-size: 17px
+	width: 87px
+	outline: 0
+	padding: 0
+	height: 28px
+	cursor: pointer
+	transition: all .2s cubic-bezier(0,0,.58,1)
+	&:hover
+		background: url(/images/src/icons/search_hover.svg) no-repeat transparent center
+		background-size: 17px
+
+
+
+
+
+
+
+
+
+
+
+
+@include media-breakpoint-down(xl)
+	.header_menu_link
+		margin-left: 25px
+		font-size: .7rem
+
+@include media-breakpoint-down(lg)
+	.header_menu_wrap
+		width: 100%
+		display: flex
+		align-items: center
+		justify-content: flex-end
+	.header-menu-burgers
+		display: block
+	.header_menu
+		display: none
+		position: absolute
+		overflow: hidden
+		right: -15px
+		top: 80px
+		width: 250px
+		height: auto
+		z-index: 100
+		background-color: #ededed
+		padding-left: 15px
+		padding-right: 15px
+		li
+			border-bottom: 1px solid #dfdfdf
+		li:last-child
+			border-bottom-style: none
+	.search_input
+		width: 270px
+
+
+
+
+
+
+@include media-breakpoint-down(md)
+	.header_top_item.address
+		display: none
+	.logo_svg
+		width: 50px
+	.logo_title
+		font-size: 1.6rem
+		line-height: 1.6rem
+	.logo_subtitle
+		font-size: .7rem
+	.header_menu_wrap
+		width: 100%
+		display: flex
+		align-items: center
+		justify-content: flex-end
+	.header-menu-burgers
+		display: block
+	.header_menu
+		right: -8px
+
+	.header_search_wrap
+		display: flex
+		flex-wrap: wrap
+	.search_form
+		order: 1
+		width: 100%
+		margin-bottom: 7px
+	.search_input
+		width: 100%
+
+	.header_search_btn_wrap
+		order: 2
+		margin: 0 auto
+
+
+
+@include media-breakpoint-down(sm)
+
+@media (max-width: 500px)
+	.logo_title
+		font-size: 1.6rem
+		line-height: 1.6rem
+	.logo_subtitle
+		font-size: .6rem
+@media (max-width: 450px)
+	.header_search_btn_wrap
+		width: 100%
+		display: flex
+		justify-content: space-between
+	.header_search_btn
+		width: calc( 50% - 3px )

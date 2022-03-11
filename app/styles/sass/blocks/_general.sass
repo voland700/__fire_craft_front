@@ -1,0 +1,43 @@
+@keyframes fadeOpen
+	from
+		display: block
+		min-height: 0
+	to
+		max-height: 500px
+
+@keyframes fadeClosed
+	from
+		height: 100%
+	to
+		height: 0
+		display: none
+
+
+.title-line
+	font-size: 1rem
+	font-weight: 400
+	color: rgb(51, 51, 51)
+	text-transform: uppercase
+	text-align: center
+	letter-spacing: .2em
+	line-height: 1.4
+	margin-top: 5px
+	width: 98%
+	margin: 20px auto
+	overflow: hidden
+	&::before
+		content: ""
+		vertical-align: top
+		display: inline-block
+		width: 50%
+		height: .65em
+		border-bottom: 1px solid #ccc
+		margin: 0 2% 0 -55%
+	&:after
+		content: ""
+		vertical-align: top
+		display: inline-block
+		width: 50%
+		height: .65em
+		border-bottom: 1px solid #ccc
+		margin: 0 -55% 0 2%

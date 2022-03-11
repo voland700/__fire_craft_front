@@ -1,0 +1,136 @@
+.slider
+	width: 100%
+	height: 600px
+	position: relative
+	border-bottom: 3px solid #d3d3d3
+	margin-bottom: 4rem
+.slider_container
+	position: relative
+	overflow: hidden
+.slider_item
+	display: flex
+	height: 100%
+	user-select: none
+.slider_background
+	position: absolute
+	top: 0
+	left: 0
+	bottom: 0
+	right: 0
+	z-index: 1
+	background-repeat: no-repeat
+	background-position: 50% 50%
+	background-size: cover
+
+.slider_title
+	color: #fff
+	font-size: 4rem
+	font-weight: 400
+	line-height: 4rem
+	text-transform: uppercase
+	letter-spacing: 5px
+	word-spacing: 9px
+	text-align: center
+	text-shadow: 1px 1px 1px rgba(43,56,62,.7)
+	width: 100%
+	margin: 0
+	position: absolute
+	top: 40%
+	z-index: 2
+
+.slider-btn-wrap
+	margin: 365px auto auto auto
+	z-index: 2
+
+.slider-btn
+	font-size: 12px
+	letter-spacing: 2px
+	font-weight: 400
+	line-height: 17px
+	text-transform: uppercase
+	text-decoration: none
+	color: #fff
+	text-shadow: 1px 1px 1px rgba(43,56,62,.5)
+	transition: all .2s ease-out 0s
+	border-width: 2px
+	margin: 0
+	padding: 8px 37px
+	border-radius: 2px
+	border: 2px solid rgba(255,255,255,.75)
+	background-color: rgba(43,56,62,.5)
+	min-height: 0
+	min-width: 0
+	&:hover
+		color: #2b383e
+		background-color: rgba(255,255,255,.75)
+		text-decoration: none
+		text-shadow: 1px 1px 1px rgba(43,56,62,.1)
+.slider
+	.swiper-button-prev,
+	.swiper-button-next
+		position: absolute
+		top: 50%
+		transform: translateY(-50%)
+		color: #fff
+		opacity: .1
+		transition: opacity .25s ease-out 0s
+	&:hover,
+	&:focus
+		.swiper-button-prev,
+		.swiper-button-next
+			opacity: .5
+	.swiper-pagination-bullet
+		background: rgba(0,0,0,.5)
+		border: 5px solid transparent
+		width: 10px
+		height: 10px
+	.swiper-pagination-bullet.swiper-pagination-bullet-active
+		//border: 5px solid rgba(0,0,0,.5)
+		//background: rgba(255,255,255,.75)
+
+.slider .swiper-button-prev,
+.slider .swiper-button-next
+	&:hover,
+	&:focus
+		opacity: 1
+	.swiper-button-prev
+		left: 20px
+	.swiper-button-next
+		right: 20px
+
+
+@include media-breakpoint-down(xl)
+	.slider_title
+		font-size: 3.5rem
+		line-height: 4rem
+
+@include media-breakpoint-down(lg)
+	.slider_title
+		font-size: 3rem
+		line-height: 3.5rem
+	.slider-btn-wrap
+		margin: 400px auto auto auto
+
+@include media-breakpoint-down(sm)
+	.slider_title
+		font-size: 2.7rem
+
+@media (max-width: 576px)
+	.slider_title
+		font-size: 2rem
+		line-height: 2.5rem
+	.slider-btn-wrap
+		margin: 420px auto auto auto
+@media (max-width: 380px)
+	.slider_title
+		padding-left: 15px
+		padding-right: 15px
+
+	.slider-btn-wrap
+		width: 85%
+		display: flex
+		justify-content: space-between
+	.slider-btn
+		width: calc( 50% - 4px )
+		padding: 8px 5px
+		text-align: center
