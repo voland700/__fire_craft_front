@@ -40,6 +40,39 @@ document.addEventListener('DOMContentLoaded', () => {
 		},
 	});
 
+		if(document.querySelector('.why_txt'))	{
+		funcItemsHeight()
+		function funcItemsHeight() {
+			var menuItems = document.querySelectorAll('.why_txt');
+			var top = menuItems[0].offsetTop;
+			var arrHeight = [];
+			var arrItems = [];
+			for (var i = 0; i < menuItems.length; i++) {
+				menuItems[i].style.height = 'auto';
+			}
+			for (var i = 0; i < menuItems.length; i++) {
+				if (top != menuItems[i].offsetTop) {
+					arrHeight.sort(function (a, b) { return b - a });
+					for (var j = 0; j < arrItems.length; j++) {
+
+						arrItems[j].style.height = arrHeight[0] + 'px';
+					}
+					top = menuItems[i].offsetTop;
+					arrHeight.length = arrItems.length = 0;
+					i = i - 1;
+					continue;
+				}
+				arrHeight[arrHeight.length] = menuItems[i].offsetHeight;
+				arrItems[arrItems.length] = menuItems[i];
+			}
+			arrHeight.sort(function (a, b) { return b - a });
+			for (var j = 0; j < arrItems.length; j++) {
+				arrItems[j].style.height = arrHeight[0] + 'px';
+			}
+		}
+		window.onresize = funcItemsHeight
+	}
+
 
 
 

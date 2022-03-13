@@ -41,3 +41,10 @@
 		height: .65em
 		border-bottom: 1px solid #ccc
 		margin: 0 -55% 0 2%
+
+@include media-breakpoint-down(sm)
+	.title-line
+		&::before
+			display: none
+		&:after
+			display: none

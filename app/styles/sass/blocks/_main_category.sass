@@ -1,6 +1,6 @@
 .main_category
 	max-width: 1140px
-	margin: 0 auto
+	margin: 0 auto 4rem auto
 .main_category_list
 	display: flex
 	justify-content: space-between
@@ -10,6 +10,15 @@
 	position: relative
 	cursor: pointer
 	transition: all .5s cubic-bezier(.3,.1,.58,1)
+	padding-bottom: 40px
+	margin-bottom: 40px
+	&:hover
+		.main_category_item_img
+			opacity: .9
+		.main_category_item_title
+			color: rgba(255,255,255,.85)
+			background: rgba(0,0,0,.7)
+
 .main_category_item_title
 	display: block
 	width: 100%
@@ -29,9 +38,11 @@
 	letter-spacing: 2px
 	padding-top: 12px
 	padding-bottom: 12px
-	transition: all .2s cubic-bezier(0,0,.58,1)
+	transition: background .2s cubic-bezier(0,0,.58,1), opacity .2s cubic-bezier(0,0,.58,1), color .2s cubic-bezier(0,0,.58,1)
 .main_category_item_img
 	max-width: 100%
+	display: block
+	margin: 0 auto
 
 
 .main-category-item-bottom
@@ -46,7 +57,7 @@
 	padding-top: 12px
 	padding-bottom: 17px
 	text-align: center
-
+	transition: background .2s cubic-bezier(0,0,.58,1)
 .main-category-item-bottom:hover
 	background: rgba(34,34,34,.9)
 
@@ -71,3 +82,15 @@
 	background-color: #fff
 	color: #333
 	text-decoration: none
+
+@include media-breakpoint-down(lg)
+	.main_category_item
+		width: calc( 33.33% - 20px)
+
+@include media-breakpoint-down(md)
+	.main_category_item
+		width: calc( 50% - 20px)
+
+@include media-breakpoint-down(sm)
+	.main_category_item
+		width: 100%
