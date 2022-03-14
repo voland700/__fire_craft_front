@@ -1,0 +1,32 @@
+.breadcrumb
+	margin: 10px 0
+.breadcrumb
+	list-style: none
+	padding-left: 0
+.breadcrumb-item
+	display: inline-block
+	margin: 5px 0
+	color: #111
+	line-height: 1.6
+	font-size: .75rem
+	font-weight: 400
+	letter-spacing: .15rem
+	text-decoration: none
+	text-transform: uppercase
+.breadcrumb-item a
+	text-decoration: none
+	color: #111
+	opacity: .7
+	transition: color .27s cubic-bezier(0,0,.58,1), opacity .27s cubic-bezier(0,0,.58,1)
+	&::after
+		content: '/'
+		display: inline-block
+		color: #9d9d9d
+		margin: 0 2px
+	&:hover
+		//color: #777
+		opacity: 1
+		color: #333
+
+.breadcrumb-item.active
+	color: #111

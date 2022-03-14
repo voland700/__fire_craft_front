@@ -1,0 +1,149 @@
+.header-line
+	border-bottom: 1px solid #ccc
+.footer_wrap
+	display: flex
+	justify-content: space-between
+	padding-top: 4rem
+.footer_info
+	width: calc( 33.33% - 30px )
+.footer_info_title
+	font-size: 1.5rem
+	color: #111
+	text-transform: uppercase
+	letter-spacing: .2rem
+	margin-bottom: 1.3rem
+	line-height: 1.4
+	font-weight: 400
+	text-align: center
+.footer_info_txt
+	color: #777
+	font-size: 1rem
+	font-weight: 300
+	line-height: 1.86
+	text-align: justify
+	text-indent: 30px
+	padding-bottom: 1rem
+
+.footer_slider
+	width: calc(66.67% - 30px)
+	position: relative
+	overflow: hidden
+	border-radius: 3px
+	.swiper-pagination-bullet.swiper-pagination-bullet-active
+		background: rgba(#ffffff, .7)
+.button-prev,
+.button-next
+	opacity: .6
+	display: block
+	position: absolute
+	width: 110px
+	height: 110px
+	line-height: 110px
+	font-size: 25px
+	text-align: center
+	background-color: transparent
+	border: none
+	color: #111
+	z-index: 6
+	transition: all .27s cubic-bezier(0,0,.58,1)
+	text-align: center
+	text-decoration: none
+	cursor: pointer
+	top: 50%
+	transform: translateY(-50%)
+
+.button-prev
+	left: -90px
+.button-next
+	right: -90px
+.footer_slider:hover
+	.button-prev
+		left: -36px
+	.button-next
+		right: -36px
+
+.button-prev::before,
+.button-next::before
+	content: ""
+	display: block
+	width: 75px
+	height: 75px
+	position: absolute
+	top: 17px
+	background: #fff
+	border-radius: 2px
+	box-shadow: 1px 1px 0 rgba(0,0,0,.1)
+	transform: rotate(45deg)
+	transition: all .27s cubic-bezier(0,0,.58,1)
+	z-index: -1
+.button-next::before
+	right: 0
+.button-prev::before
+	left: 0
+
+.footer_slider_wrap
+	position: relative
+.footer_slider_item
+	height: 100%
+	position: relative
+	background-repeat: no-repeat
+	background-position: 50% 50%
+	background-size: cover
+
+.footer-bottom-wrap
+	display: flex
+	flex-wrap: wrap
+	justify-content: center
+	align-items: center
+	width: 100%
+	height: 150px
+	background-color: #f8f8f8
+	margin-top: 5rem
+
+
+.footer-copy
+	text-align: center
+	margin-bottom: 5px
+	text-transform: uppercase
+	letter-spacing: .5em
+
+.footer-made
+	text-align: center
+	font-size: 11px
+	color: darken(#f8f8f8, 35%)
+
+
+
+.scrollup
+	display: block
+	width: 40px
+	height: 40px
+	position: fixed
+	bottom: 50px
+	right: 25px
+	opacity: .2
+	transition: opacity .27s cubic-bezier(0,0,.58,1)
+	cursor: pointer
+	&:hover
+		opacity: .7
+
+@include media-breakpoint-down(lg)
+	.footer_wrap
+		flex-wrap: wrap
+	.footer_info
+		width: 100%
+		margin-bottom: 4rem
+	.footer_slider
+		width: 100%
+		height: 420px
+
+@include media-breakpoint-down(md)
+	.footer_slider
+		height: 370px
+@include media-breakpoint-down(sm)
+	.footer_slider
+		height: 320px
+
+@media (max-width: 400px)
+	.footer_slider
+		height: 300px

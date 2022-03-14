@@ -40,7 +40,31 @@ document.addEventListener('DOMContentLoaded', () => {
 		},
 	});
 
-		if(document.querySelector('.why_txt'))	{
+	let bottomSlider = new Swiper('#bottomSlider', {
+		speed: 1000,
+		loop: true,
+		//parallax: true,
+		effect: "fade",
+		fadeEffect: {
+			crossFade: true
+		},
+		autoplay: {
+			delay: 5000,
+			disableOnInteraction: false,
+		},
+		pagination: {
+			el: '.swiper-pagination',
+			clickable: true,
+		},
+		navigation: {
+			nextEl: '.button-next',
+			prevEl: '.button-prev',
+		},
+	});
+
+
+
+	if(document.querySelector('.why_txt'))	{
 		funcItemsHeight()
 		function funcItemsHeight() {
 			var menuItems = document.querySelectorAll('.why_txt');
@@ -72,6 +96,21 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 		window.onresize = funcItemsHeight
 	}
+
+	// Кнопка вверх
+	$(window).scroll(function(){
+		let Hwindow = ($('body').height())*0.7;
+		if ($(this).scrollTop() > Hwindow ) {
+		$('.scrollup').css('visibility', 'visible');
+		} else {
+		$('.scrollup').css('visibility', 'hidden');
+		}
+		});
+		$('.scrollup').click(function(){
+		$("html, body").animate({ scrollTop: 0 }, 600);
+		return false;
+	});
+
 
 
 

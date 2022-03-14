@@ -1,0 +1,124 @@
+.items_list
+	display: flex
+	justify-content: space-between
+	flex-wrap: wrap
+.item_wrap
+	width: calc( 25% - 30px )
+.item_img_wrap
+	position: relative
+	width: 100%
+	overflow: hidden
+	//margin-bottom: 1rem
+	&::before
+		content: ""
+		display: block
+		padding-top: 120%
+
+.item_link_img
+	display: flex
+	justify-content: center
+	align-items: center
+	position: absolute
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+
+
+
+
+
+.item_lable_wrap
+	display: inline-block
+	max-width: 50%
+	position: absolute
+	top: 20px
+	right: 0
+.item_lable
+	display: inline
+	padding: 0.2rem 0.6rem 0.3rem
+	font-size: 75%
+	font-weight: 700
+	line-height: 1
+	color: #fff
+	text-align: center
+	white-space: nowrap
+	vertical-align: baseline
+	border-radius: 0.25rem
+	margin-left: auto
+	margin-right: 0
+.item_lable.new
+	background-color: #333
+
+
+
+.item_img
+	max-width: 90%
+	max-height: 90%
+.item_discont
+	display: block
+	position: absolute
+	bottom: 30px
+	right: 0
+	width: 60px
+	height: 60px
+	border-radius: 50%
+	background: url(/images/src/icons/disc.png) no-repeat center
+	background-size: cover
+	color: #fff
+	text-align: center
+	text-shadow: 0 1px 0 #2e3a40
+	font-weight: bold
+	font-size: 23px
+	line-height: 60px
+
+.item_title
+	font-size: 1rem
+	text-transform: uppercase
+	text-align: center
+	letter-spacing: .2rem
+
+.item_titl_link
+	display: block
+	color: #777
+	text-decoration: none
+	transition: color .27s cubic-bezier(.3,.1,.58,1)
+	&:hover
+		color: #111
+.item_price
+	text-align: center
+	margin-bottom: 22px
+	color: #777
+	//font-weight: 700
+	line-height: 1.75
+.item_price_real
+	font-size: 1.1rem
+	line-height: 1.1rem
+	color: #333
+
+
+.item_price_old
+	font-size: 1rem
+	line-height: 1rem
+	color: #777
+	text-decoration: line-through
+	margin-left: 1rem
+
+.item_offers
+	display: flex
+	justify-content: center
+
+
+.item_offer_link
+	display: inline-block
+	width: 24px
+	height: 24px
+	background-position: center
+	border-radius: 4px
+	border: 2px solid #fff
+	background-size: inherit
+	cursor: pointer
+	margin-left: .75rem
+	margin-right: .75rem
+.item_offer_link.active
+	box-shadow: 0 0 5px #000
