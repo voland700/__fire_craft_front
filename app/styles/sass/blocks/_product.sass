@@ -1,0 +1,165 @@
+.prodact_wrap
+	display: flex
+	justify-content: space-between
+	color: #777
+	border-top: 1px solid #eee
+	padding-top: 1.5rem
+
+.product_images_wrap
+	width: calc( 38% - 25px )
+
+	border: 1px solid #eee
+
+.product_img_block
+
+.product_img_link
+.product_img
+	width: 100%
+
+
+.product_prev_wrap
+	display: flex
+	justify-content: space-around
+.product_prev_gallery
+	width: 90%
+	margin: 0 auto
+.product_prev_list
+	display: flex
+	justify-content: space-around
+
+
+.product_prev
+	position: relative
+	border: 1px solid darken(#eee, 3%)
+	border-radius: 3px
+	padding: 2px
+	transition: border-color 30ms ease-out
+	&:hover,
+	&:focus
+		border-color: darken(#eee, 9%)
+
+	&::before
+		content: ""
+		display: block
+		padding-top: 100%
+.product_prev_link
+	display: block
+	overflow: hidden
+	position: absolute
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+	overflow: hidden
+	transition: border-color 30ms ease-out
+.product_prev_img
+	display: block
+	object-fit: cover
+	object-position: center
+	max-width: 100%
+	height: auto
+	max-height: 100%
+	margin: auto
+
+
+.product_info_wrap
+	width: calc( 40% - 25px )
+	display: flex
+	flex-direction: column
+
+
+
+.product_info_text
+	margin-bottom: 1.5rem
+	line-height: 1.55
+	p
+		margin-bottom: 0
+.product_property
+.product_property_tbl
+	width: 100%
+	border: 1px solid #ddd
+	border-radius: 3px
+	font-size: 1rem
+	tr:nth-child(odd)
+		background-color: #f9f9f9
+	td
+		padding: 8px
+		line-height: 1.42857143
+		vertical-align: top
+		border: 1px solid #ddd
+
+.product_contact_wrap
+	width: calc( 22% - 25px )
+	border-left: 1px solid #eee
+	padding-left: 30px
+
+.product_contact_item
+	position: relative
+	padding-left: 60px
+	margin-top: 60px
+.product_contact_icon
+	position: absolute
+	top: 0
+	left: 0
+	width: 40px
+	height: 49px
+	svg
+		width: 100%
+.product_contact_title
+	text-transform: uppercase
+	letter-spacing: .15rem
+	margin: 0 0 10px 0
+	padding: 9px 0 12px 0
+	font-size: 1rem
+	line-height: 1rem
+	font-weight: 400
+	color: #777
+	border-bottom: 1px solid #eee
+
+.product_contact_text
+	text-transform: uppercase
+	letter-spacing: .15rem
+	margin: 0 0 10px 0
+	padding: 0
+	font-size: 1rem
+	font-weight: 400
+	color: #777
+	a
+		color: #777
+		font-size: .9rem
+		letter-spacing: .1rem
+		transition: color .27s cubic-bezier(.3,.1,.58,1)
+		&:hover
+			color: #555
+
+@include media-breakpoint-down(xxl)
+	.product_contact_wrap
+		padding-left: 20px
+	.product_contact_item
+		padding-left: 55px
+	.product_contact_title
+		margin-bottom: .5rem
+	.product_contact_text
+		font-size: .95rem
+		letter-spacing: .1rem
+
+@include media-breakpoint-down(xl)
+	.product_images_wrap
+		width: calc( 50% - 20px )
+	.product_info_wrap
+		width: calc( 50% - 20px )
+	.product_contact_wrap
+		display: none
+	.product_property_tbl
+		line-height: 1.4
+
+@include media-breakpoint-down(xl)
+	.prodact_wrap
+		flex-wrap: wrap
+	.product_images_wrap
+		width: 80%
+
+		margin: 0 auto 2rem auto
+
+	.product_info_wrap
+		width: 100%

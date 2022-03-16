@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		window.onresize = funcItemsHeight
 	}
 
-	// Кнопка вверх
+	// Button UP
 	$(window).scroll(function(){
 		let Hwindow = ($('body').height())*0.7;
 		if ($(this).scrollTop() > Hwindow ) {
@@ -110,6 +110,33 @@ document.addEventListener('DOMContentLoaded', () => {
 		$("html, body").animate({ scrollTop: 0 }, 600);
 		return false;
 	});
+
+	//Prodact gallery
+	if(document.getElementById('ImagesSlider')){
+
+		let galery = new Swiper("#ImagesSlider", {
+			slidesPerView: 5,
+			spaceBetween: 10,
+			slidesPerGroup: 1,
+			centerInsufficientSlides: true,
+			pagination: {
+				el: ".swiper-pagination",
+				clickable: true,
+			},
+			navigation: {
+				nextEl: "#ImagesSliderPrev",
+				prevEl: "#ImagesSliderNext",
+			},
+
+		});
+
+
+
+
+
+
+
+	}
 
 
 

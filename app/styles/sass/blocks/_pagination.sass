@@ -1,10 +1,61 @@
 .pagination_wrap
+	display: flex
+	justify-content: center
+	align-items: center
+	margin: 0 auto 3rem auto
 .pagination_list
-.pagination_direct.dormant
-.pagination_direct_link.prev
+	display: flex
+	flex-wrap: wrap
+	justify-content: center
+	list-style: none
+	margin: 0
+	padding: 0
+
+.pagination_direct,
 .pagination_item
-.pagination_link.active
+	display: inline-block
+	min-width: 37px
+	text-align: center
+	line-height: 35px
+	box-sizing: border-box
+	border: 1px solid #eaeaea
+	color: #777
+	font-size: 1rem
+	font-weight: 400
+	text-transform: uppercase
+	text-align: center
+	text-decoration: none
+	margin: 0 3px 3px 0
+	transition: border-color .27s cubic-bezier(0,0,.58,1)
+	&:hover
+		border-color: #bbb
+		.pagination_direct_link,
+		.pagination_link
+			color: #444
+
+.pagination_direct_link,
 .pagination_link
-.page-item.dormant
-.pagination_direct
-.pagination_direct_link.next
+	display: block
+	color: #999
+	text-decoration: none
+	padding: 0 .85rem
+	transition: color .27s cubic-bezier(0,0,.58,1)
+
+.pagination_direct.dormant
+	.pagination_direct_link
+		color: #eaeaea
+	&:hover
+		border-color: #eaeaea
+		.pagination_direct_link
+			color: #eaeaea
+
+.pagination_item.dormant
+	&:hover
+		border-color: #eaeaea
+
+.pagination_item.active
+	background-color: lighten(#ededed, 2%)
+	&:hover
+		border-color: #eaeaea
+		.pagination_link
+			color: #444
