@@ -7,25 +7,44 @@
 
 .product_images_wrap
 	width: calc( 38% - 25px )
-
-	border: 1px solid #eee
+	box-sizing: border-box
+	//border: 1px solid #eee
 
 .product_img_block
+	position: relative
+	margin-bottom: 1.5rem
+	&::before
+		content: ""
+		display: block
+		padding-top: 130%
 
 .product_img_link
+	display: flex
+	position: absolute
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
 .product_img
-	width: 100%
-
+	width: auto
+	max-width: 100%
+	height: auto
+	max-height: 100%
+	margin: auto
 
 .product_prev_wrap
 	display: flex
 	justify-content: space-around
+	position: relative
+	margin-bottom: 1rem
+
 .product_prev_gallery
-	width: 90%
+	width: calc( 90% + 1px)
 	margin: 0 auto
 .product_prev_list
-	display: flex
-	justify-content: space-around
+	//display: flex
+	//justify-content: space-around
+	width: 100%
 
 
 .product_prev
@@ -36,12 +55,15 @@
 	transition: border-color 30ms ease-out
 	&:hover,
 	&:focus
-		border-color: darken(#eee, 9%)
-
+		border-color: darken(#eee, 10%)
 	&::before
 		content: ""
 		display: block
 		padding-top: 100%
+.product_prev.active
+	border-color: $dark
+
+
 .product_prev_link
 	display: block
 	overflow: hidden
@@ -61,13 +83,33 @@
 	max-height: 100%
 	margin: auto
 
+.icon-cheveron-left,
+.icon-cheveron-right
+	position: absolute
+	top: calc( 50% - 7px )
+	width: 15px
+	height: 15px
+	border-top: 2px solid #999
+	border-right: 2px solid #999
+	margin-right: 15px
+	opacity: .3
+	transition: opacity 30ms ease-out
+	&:hover
+		opacity: 1
+
+.icon-cheveron-left
+	transform: rotate(-135deg)
+	left: 0
+.icon-cheveron-right
+	transform: rotate(45deg)
+	right: -15px
+
+
 
 .product_info_wrap
 	width: calc( 40% - 25px )
 	display: flex
 	flex-direction: column
-
-
 
 .product_info_text
 	margin-bottom: 1.5rem
@@ -75,6 +117,7 @@
 	p
 		margin-bottom: 0
 .product_property
+	margin-bottom: 1.5rem
 .product_property_tbl
 	width: 100%
 	border: 1px solid #ddd
@@ -87,6 +130,63 @@
 		line-height: 1.42857143
 		vertical-align: top
 		border: 1px solid #ddd
+
+
+.product_offers_wrap
+	border-bottom: 1px solid #eee
+	padding-left: 1rem
+.product_offers_info
+	font-size: 1rem
+	color: #555
+	margin-bottom: 1.5rem
+	span
+		margin-right: 1rem
+		b
+			margin-right: .5rem
+
+.product_offers_list
+	list-style: none
+	padding: 0
+	margin-bottom: 1.5rem
+.product_offer
+	display: inline-block
+	overflow: hidden
+	border: 2px solid #fff
+	border-radius: 4px
+	cursor: pointer
+	display: inline-block
+	width: 1.75rem
+	height: 1.75rem
+	margin-right: 1rem
+.product_offer.active
+	box-shadow: 0 0 5px #000
+
+.product_offer_color
+	display: inline-block
+	width: 100%
+	height: 100%
+	background-repeat: no-repeat
+	background-position: 50%
+	background-size: cover
+	background-size: inherit
+
+.product_price
+	padding: 1.5rem 1rem 2rem 1rem
+
+.product_price_real
+	color: #333
+	font-size: 1.4rem
+	line-height: 1.4rem
+	margin-right: 1rem
+.product_price_old
+	color: #777
+	font-size: 1.1rem
+	line-height: 1.1rem
+	text-decoration: line-through
+
+
+
+
 
 .product_contact_wrap
 	width: calc( 22% - 25px )
@@ -151,15 +251,49 @@
 	.product_contact_wrap
 		display: none
 	.product_property_tbl
-		line-height: 1.4
+	.product_property_tbl td
+		font-size: .9rem
+		line-height: 1.1
 
-@include media-breakpoint-down(xl)
+@include media-breakpoint-down(lg)
+	.product_offers_info span
+		display: inline-block
+		width: 100%
+
+@include media-breakpoint-down(md)
 	.prodact_wrap
 		flex-wrap: wrap
 	.product_images_wrap
 		width: 80%
-
 		margin: 0 auto 2rem auto
 
 	.product_info_wrap
 		width: 100%
+		border-top: 1px solid #eee
+
+	.product_info_text
+		order: 3
+
+	.product_property
+		order: 4
+
+	.product_offers_wrap
+		order: 2
+		margin-bottom: 1.5rem
+
+	.product_price
+		order: 1
+		padding: 2rem 1rem 1.5rem 1rem
+
+	.product_property_tbl td
+		font-size: 1rem
+		line-height: 1.4
+	.product_offers_info span
+		display: inline
+		width: auto
+@include media-breakpoint-down(sm)
+	.product_images_wrap
+		width: 100%
+	.product_offers_info span
+		font-size: .95rem
+@media (max-width: 400px)

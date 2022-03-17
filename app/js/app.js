@@ -115,10 +115,10 @@ document.addEventListener('DOMContentLoaded', () => {
 	if(document.getElementById('ImagesSlider')){
 
 		let galery = new Swiper("#ImagesSlider", {
-			slidesPerView: 5,
+			slidesPerView: 4,
 			spaceBetween: 10,
-			slidesPerGroup: 1,
-			centerInsufficientSlides: true,
+			//slidesPerGroup: 1,
+			//centerInsufficientSlides: true,
 			pagination: {
 				el: ".swiper-pagination",
 				clickable: true,
@@ -127,8 +127,57 @@ document.addEventListener('DOMContentLoaded', () => {
 				nextEl: "#ImagesSliderPrev",
 				prevEl: "#ImagesSliderNext",
 			},
-
 		});
+
+		if(galery.slides.length <= galery.params.slidesPerView){
+			document.getElementById('ImagesSliderPrev').style.display = 'none';
+			document.getElementById('ImagesSliderNext').style.display = 'none';
+			//document.getElementById('ImagesSlider').style.width = '100%';
+		}
+
+		let mainImg = document.getElementById('mainImg');
+
+		let prevLinks = document.querySelectorAll('.product_prev_link').forEach(function(elem){
+			elem.addEventListener('click', function(item){
+				item.preventDefault();
+				let pathImg = item.target.parentNode.getAttribute('href');
+				mainImg.setAttribute('src', pathImg);
+
+				let parent = item.target.parentNode.parentNode;
+				document.querySelectorAll('.product_prev').forEach(function(e){
+					if(e.classList.contains("active")) e.classList.remove("active");
+				});
+				if(!parent.classList.contains("active")) parent.classList.add("active");
+			});
+		});
+
+		mainImg.addEventListener('click', function(){
+			event.preventDefault();
+			let mainImgPath = mainImg.getAttribute('src');
+			let arrPath = document.querySelectorAll('.product_prev_link');
+			let namber = 0;
+			for (let i = 0; i < arrPath.length; i++) {
+				if (arrPath[i].getAttribute('href') == mainImgPath) {
+					namber = i;
+				}
+			}
+			$.fancybox.open($('.product_prev_link'), {
+				touch: true,
+				loop: true
+			}, namber);
+		});
+	}
+
+	if(document.getElementById('offerList')){
+		document.querySelectorAll('product_offer').forEach(function(elem){
+			elem.addEventListener('click', function(item){
+
+
+
+			});
+		})
+
+
 
 
 
