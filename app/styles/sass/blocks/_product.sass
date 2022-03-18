@@ -4,6 +4,7 @@
 	color: #777
 	border-top: 1px solid #eee
 	padding-top: 1.5rem
+	margin-bottom: 3rem
 
 .product_images_wrap
 	width: calc( 38% - 25px )
@@ -232,6 +233,145 @@
 		&:hover
 			color: #555
 
+
+.product_content
+.product_tab_ul
+	display: flex
+	list-style: none
+	border-bottom: 1px solid #ddd
+	font-size: .85rem
+	line-height: .9rem
+	font-weight: 400
+	text-transform: uppercase
+	letter-spacing: 2px
+	padding: 0
+	margin: 0
+
+.product_tab_li
+	display: inline-block
+	padding: .92rem 1.5rem
+	box-sizing: border-box
+	border-right: 5px
+	margin-left: -1px
+	margin-bottom: -1px
+	transition: color .27s cubic-bezier(.3,.1,.58,1), border-color .27s cubic-bezier(.3,.1,.58,1), background-color .27s cubic-bezier(.3,.1,.58,1)
+	cursor: pointer
+	&:first-child
+		margin-left: 0
+	&:hover,
+	&:focus
+		border-color: #eee #eee #ddd #eee
+		background-color: #f5f5f5
+		color: #555
+
+.product_tab_li.active
+	border-top: 1px solid #e5e5e5
+	border-right: 1px solid #e5e5e5
+	border-left: 1px solid #e5e5e5
+	border-bottom: 1px solid #fff
+	cursor: default
+	&:hover,
+	&:focus
+		border-color: #e5e5e5 #e5e5e5 #ffff #e5e5e5
+		background-color: #fff
+		color: inherit
+
+.product_tab_wrap
+	position: relative
+
+.product_tab
+	position: absolute
+	top: 0
+	right: 0
+	left: 0
+
+	//display: none
+	opacity: 0
+	padding: 2.5rem 1rem
+	transition: opacity .27s cubic-bezier(.3,.1,.58,1),
+
+.product_tab.behold
+	display: block
+	opacity: 1
+
+
+
+
+.product_documents
+	display: flex
+	flex-wrap: wrap
+
+
+.product_doc_item
+	width: 50%
+	padding: 1rem
+	display: flex
+	gap: 10px
+.product_doc_icon
+	display: block
+	flex-grow: 0
+	width: 46px
+	height: 35px
+	overflow: hidden
+	filter: grayscale(.9)
+	background-image: url(/images/src/icons/docs_types.png)
+	background-repeat: no-repeat
+
+	&[href$=".pdf"]
+		background-position: left 0 top 0
+	&[href$=".doc"],
+	&[href$=".docx"]
+		background-position: left 0 top -55px
+	&[href$=".jpg"],
+	&[href$=".jpeg"]
+		background-position: left 0 top -110px
+	&[href$=".png"]
+		background-position: left 0 top -165px
+	&[href$=".ptt"]
+		background-position: left 0 top -220px
+	&[href$=".txt"],
+	&[href$=".rtf"]
+		background-position: left 0 top -275px
+	&[href$=".tif"]
+		background-position: left 0 top -330px
+	&[href$=".xls"],
+	&[href$=".xlsx"]
+		background-position: left 0 top -385px
+
+.product_doc_info
+	width: calc(100% - 56px)
+	line-height: 1.4
+.product_doc_link
+	color: #555
+	text-decoration: none
+	transition: color 70ms ease-out
+	&:hover,
+	&:focus
+		color: #555
+		//color: $accent
+.product_doc_size
+	display: inline-block
+	font-style: italic
+	font-size: .9em
+	color: #999
+	margin-left: 5px
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @include media-breakpoint-down(xxl)
 	.product_contact_wrap
 		padding-left: 20px
@@ -260,6 +400,9 @@
 		display: inline-block
 		width: 100%
 
+	.product_documents
+	.product_doc_item
+		width: 100%
 @include media-breakpoint-down(md)
 	.prodact_wrap
 		flex-wrap: wrap
@@ -296,4 +439,21 @@
 		width: 100%
 	.product_offers_info span
 		font-size: .95rem
-@media (max-width: 400px)
+
+	.product_tab_ul
+		flex-wrap: wrap
+		border-bottom: none
+	.product_tab_li
+		border: none
+		margin-left: 0
+		margin-bottom: .5rem
+
+	.product_tab_li.active
+		border: 1px solid #e5e5e5
+		background-color: #f5f5f5
+		&:hover,
+		&:focus
+			border: 1px solid #e5e5e5
+			background-color: #f5f5f5
+	.product_tab_wrap
+		border-bottom: 1px solid #eee

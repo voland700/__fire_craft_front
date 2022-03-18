@@ -168,35 +168,82 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	}
 
+	//offers
 	if(document.getElementById('offerList')){
-		document.querySelectorAll('product_offer').forEach(function(elem){
+		document.querySelectorAll('.product_offer').forEach(function(elem){
 			elem.addEventListener('click', function(item){
+				item.preventDefault();
+				let li = item.target.parentNode;
+				if(li.classList.contains('active')) return false
+				document.querySelectorAll('.product_offer').forEach(function(e){
+					if(e.classList.contains("active")) e.classList.remove("active");
+				});
+				li.classList.add("active");
+				let priceBlock = document.getElementById('priceBlock');
+				let offerInfo = document.getElementById('offerInfo');
 
+				let name = li.dataset.name;
+				let number = li.dataset.number;
+				let parent = li.dataset.parent;
+				let price = li.dataset.price;
+				let old = li.dataset.old;
+				let domPrice = document.createElement('span');
+				let domOld = document.createElement('span');
 
+				domPrice.className = 'product_price_real';
+				if(price) domPrice.innerText = price;
+				priceBlock.innerHTML = '';
+				priceBlock.prepend(domPrice);
+				if(old){
+					domOld.className = 'product_price_old';
+					domOld.innerText = old;
+					priceBlock.append(domOld);
+				}
+
+				offerInfo.innerHTML = '';
+				if(number) offerInfo.insertAdjacentHTML('afterbegin', '<span><b>Артикул</b> '+number+'</span>');
+				if(name) offerInfo.insertAdjacentHTML('beforeend', '<span><b>Цвет</b> '+name+'</span>');
 
 			});
 		})
-
-
-
-
-
-
-
-
-
 	}
 
 
+	/*--tabs--*/
+	document.querySelectorAll('.product_tab_li').forEach(function (elem) {
+		elem.addEventListener('click', function (item) {
+			//let elemSelected = item.target.parentElement;
+			let elemSelected = item.target;
+			let nameAttr = elemSelected.dataset.name;
+			let nameList = document.querySelectorAll('.product_tab_li');
 
+			if (!elemSelected.classList.contains('active')) {
+				nameList.forEach(function (name) {
+					if (name.classList.contains('active')) name.classList.remove('active');
+				});
+				elemSelected.classList.add('active');
+				document.querySelectorAll('.product_tab').forEach(item => {
+					item.dataset.tab == nameAttr ? item.classList.add('behold') : item.classList.remove('behold');
+				})
+			}
+		});
+	});
 
-
-
-
-
-
-
-
-
+	/* -- табы одинаковой высоты -- */
+	funcItemsHeight()
+	function funcItemsHeight() {
+		tabsList = document.querySelectorAll('.product_tab');
+		if(tabsList.length >1){
+			let height = 0;
+			for( var i = 0; i < tabsList.length; i++ ){
+				let current_height = tabsList[i].offsetHeight;
+				if(current_height > height) {
+					height = current_height;
+				}
+			}
+			document.getElementById('tabWrapper').style.height = height + 'px';
+		}
+	}
+	window.onresize = funcItemsHeight;
 
 });

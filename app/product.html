@@ -169,40 +169,53 @@
 
 
 			<div class="product_offers_wrap">
-				<div class="product_offers_info">
+				<div class="product_offers_info" id="offerInfo">
 					<span><b>Артикул</b> 30023237</span>
-					<span><b>Цвет</b> Черная краска BP</span>
+					<span><b>Цвет</b>Черная краска BP</span>
 				</div>
 				<ul class="product_offers_list" id="offerList">
-					<li class="product_offer active">
+					<li class="product_offer active"
+						data-name="Черная краска BP"
+						data-number = 30023237
+						data-parent = 12
+						data-price = "248 190 руб."
+						data-old = "347 090 руб.">
 						<span class="product_offer_color" style="background-image:url('/images/src/colors/bp.jpg');"></span>
 					</li>
 
-					<li class="product_offer">
+					<li class="product_offer"
+						data-name="Темно-синяя эмаль - BBE"
+						data-number=30024567
+						data-parent=12
+						data-price="278 000 руб."
+						data-old="">
 						<span class="product_offer_color" style="background-image:url('/images/src/colors/bbe.jpg');"></span>
 					</li>
 
-					<li class="product_offer">
+					<li class="product_offer"
+						data-name="Эмаль слоновая-кость - IVE"
+						data-number=30027788
+						data-parent=12
+						data-price="287 800 руб."
+						data-old="">
 						<span class="product_offer_color" style="background-image:url('/images/src/colors/ive.jpg');"></span>
 					</li>
 
-					<li class="product_offer">
+					<li class="product_offer"
+						data-name="Бордовая эмаль - BRM"
+						data-number=3004955
+						data-parent=12
+						data-price="317 440 руб."
+						data-old="358 170 руб.">
 						<span class="product_offer_color" style="background-image:url('/images/src/colors/brm.jpg');"></span>
 					</li>
 				</ul>
 			</div>
 
-			<div class="product_price">
+			<div class="product_price" id="priceBlock">
 				<span class="product_price_real">281 300 руб.</span>
 				<span class="product_price_old">327 780 руб.</span>
 			</div>
-
-
-
-
-
-
-
 		</div>
 
 		<div class="product_contact_wrap">
@@ -326,13 +339,125 @@
 
 		</div>
 
+	</div><!-- END PRODUCT TOP -->
+
+	<div class="product_content">
+
+		<ul class="product_tab_ul">
+			<li class="product_tab_li active" data-name="discrip">
+				Описание
+			</li>
+			<li class="product_tab_li" data-name="property">
+				Аксессуары
+			</li>
+			<li class="product_tab_li" data-name="doc">
+				Документы
+			</li>
+		</ul>
+
+		<div class="product_tab_wrap" id="tabWrapper">
+
+			<div class="product_tab behold" data-tab="discrip">
+				<p><strong>Чугунная печь-камин Jotul F 3 CB</strong> с функцией "Clean Burn" - чистое горение, при среднем уровне обеспечивает 6 кВт, рассчитана на обогрев помещений площадью до 120 м2.</p>
+				<p><strong>Jоtul F 3 CB</strong> одна из самых популярных и продаваемых моделей каминов Jøtul. Горизонтальная камера сгорания вмещает в себя дровяные полена длиной до 40 см. Благодаря уникальному дизайну, этот камин гармонично смотрится в разных интерьерах. Большое стекло обеспечивает идеальный вид на горящее пламя. Доступный снаружи зольник облегчает удаление золы. Зольная планка эффективно задерживает золу внутри камеры сгорания.</p>
+				<p>Эту компактную дровяную каминную печь, удобно использовать как в домах с низкой тепловой потребностью, так и для обогрева домов во время сильных холодов, у неё достаточно мощности для обогрева больших помещений.</p>
+				<p>Дровяной камин Jоtul F 3 CB доступен в различных цветовых вариантах: окрашенный в черный цвет или покрытый жаростойкой эмалью цвета с коричневая майолика. Благодаря эмалированной поверхности камина, его состояние и внешний вид сохраняется неизменным долгие годы.</p>
+				<ul>
+					<li>Материал – чугун;</li>
+					<li>Большая камера сгорания;</li>
+					<li>Широкая цветовая гамма;</li>
+					<li>Наружный, большой зольник;</li>
+					<li>Доступна в эмалированной версии;</li>
+				</ul>
+
+			</div>
+
+			<div class="product_tab" data-tab="property">
+				<table cellspacing="0" class="product_property_tbl">
+					<tbody>
+						<tr>
+							<td> Дополнительное оборудование для J0TUL F 3 SERIES / J0TUL F 8 </td>
+							<td>Артикул</td>
+						</tr>
+						<tr>
+							<td> Комплект для подключения для Jotul F 3 TD / Jotul F 8 TD задний выход </td>
+							<td> JGA020127 </td>
+						</tr>
+						<tr>
+							<td> Комплект для подключения для Jotul F 3 TD / Jotul F 8 TD верхний выход </td>
+							<td> JGA020126 </td>
+						</tr>
+						<tr>
+							<td> Переходник стальной 0 150 х 100 для Jotul F 3 TD / Jotul F 8 </td>
+							<td> JGA022005 </td>
+						</tr>
+						<tr>
+							<td> Накопительная масса HSS 06 для Jotul F3 / Jotul F8 </td>
+							<td> JGA030006 </td>
+						</tr>
+						<tr>
+							<td> Гриль для Jotul F 3 TD / Jotul F 8 TD </td>
+							<td> JGA042001 </td>
+						</tr>
+						<tr>
+							<td> Нагревательная плита для Jotul F 3 TD / Jotul F 8 </td>
+							<td> JGA043155 </td>
+						</tr>
+						<tr>
+							<td> Переходник стальной 0 150 со шнуром для Jotul F 3 эмалированных (от 2012 г.) </td>
+							<td> JGA022004 </td>
+						</tr>
+						<tr>
+							<td> Переходник стальной 0 173 / 0150 х 120 для Jotul F 3 TD / Jotul F 8 </td>
+							<td> JGA022008 </td>
+						</tr>
+					</tbody>
+				</table>
 
 
+			</div>
 
+			<div class="product_tab" data-tab="doc">
 
+				<div class="product_documents">
 
+					<div class="product_doc_item">
+						<a href="777.pdf" target="_blank" class="product_doc_icon"></a>
+						<div class="product_doc_info">
+							<a href="#" target="_blank" class="product_doc_link">Руководство по эксплуатации печи Везувий Легенда</a>
+							<span class="product_doc_size">(125 кб.)</span>
+						</div>
+					</div>
 
+					<div class="product_doc_item">
+						<a href="778.doc" target="_blank" class="product_doc_icon"></a>
+						<div class="product_doc_info">
+							<a href="#" target="_blank" class="product_doc_link">Описание продкуции, новинок производителя Везувий</a>
+							<span class="product_doc_size">(1 127 кб.)</span>
+						</div>
+					</div>
 
+					<div class="product_doc_item">
+						<a href="779.xls" target="_blank" class="product_doc_icon"></a>
+						<div class="product_doc_info">
+							<a href="#" target="_blank" class="product_doc_link">Прайст лист продукции Везувий</a>
+							<span class="product_doc_size">(3 475 кб.)</span>
+						</div>
+					</div>
+
+					<div class="product_doc_item">
+						<a href="780.jpg" target="_blank" class="product_doc_icon"></a>
+						<div class="product_doc_info">
+							<a href="#" target="_blank" class="product_doc_link">Схема элементов, конструкция печи-камина Везувий</a>
+							<span class="product_doc_size">(275 кб.)</span>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
 
 
 
