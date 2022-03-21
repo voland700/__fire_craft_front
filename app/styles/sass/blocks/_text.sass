@@ -1,0 +1,71 @@
+.article
+	color: #555
+	h3
+		font-size: 1.5rem
+		//margin-top: 1rem
+		margin-bottom: 1.2rem
+		margin-bottom: 1.5rem
+	blockquote
+		min-height: 40px
+		margin: 20px 0 22px
+		position: relative
+		padding: 2px 0 3px 25px
+		vertical-align: middle
+		border: none
+		&::before
+			content: ""
+			display: block
+			width: 3px
+			position: absolute
+			left: 5px
+			top: 0
+			bottom: 0
+			background-color: lighten($dark, 15%)
+	a
+		color: #337ab7
+		text-decoration: none
+		transition: color .2s cubic-bezier(0,0,.58,1), text-decoration .2s cubic-bezier(0,0,.58,1)
+		&:hover
+			color: #23527c
+			text-decoration: underline
+.article_link
+		color: #337ab7
+		text-decoration: none
+		transition: color .2s cubic-bezier(0,0,.58,1), text-decoration .2s cubic-bezier(0,0,.58,1)
+		&:hover
+			color: #23527c
+			text-decoration: underline
+
+
+.doc_list
+	display: flex
+	flex-wrap: wrap
+	margin-bottom: 2rem
+.doc_item
+	display: flex
+	align-items: center
+	width: 50%
+	padding: 1rem
+.doc_link_img
+	display: block
+	width: 70px
+	//height: 90px
+	height: auto
+	overflow: hidden
+	margin-right: 1rem
+	box-shadow: 0 0 3px rgb(122, 122, 122, 50%)
+
+.doc_img
+	width: 100%
+
+.doc_link
+		color: #337ab7
+		text-decoration: none
+		transition: color .2s cubic-bezier(0,0,.58,1), text-decoration .2s cubic-bezier(0,0,.58,1)
+		&:hover
+			color: #23527c
+			text-decoration: underline
+
+@include media-breakpoint-down(md)
+	.doc_item
+		width: 100%

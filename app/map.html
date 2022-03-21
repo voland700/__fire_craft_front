@@ -1,0 +1,342 @@
+<!--#set var="title" value="OptimizedHTML 5" -->
+<!--#include virtual="/parts/header.html" -->
+
+<div class="container">
+	<nav aria-label="breadcrumb" class="breadcrumbs">
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item">
+				<a itemprop="item" href="№"><span>Главная страница</span></a>
+			</li>
+			<li class="breadcrumb-item">
+				<a itemprop="item" href="№"><span>Каталог продукции</span></a>
+			</li>
+			<li class="breadcrumb-item">
+				<a href="#"><span itemprop="name">Печи</span></a>
+			</li>
+			<li class="breadcrumb-item active" aria-current="page">Печи-камины Jotul</li>
+		</ol>
+	</nav>
+	<h1 class="main_title" id="bx_1847241719_232">Дилеры Jotul и Morso в России</h1>
+</div>
+<main class="container">
+	<!--Start CONTENT text-->
+	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+	<script>
+		let data_obj = { 'ar': ['Магазин &quot;Очаг&quot; - ТЦ «РИМ»', 'Магазин &quot;Очаг&quot; - ТЦ «РИМ» у «Деловых линий»', 'Магазин &quot;Очаг&quot; - Северодвинск',], 'vo': ['ООО &quot;Камин клуб&quot;',], 'kn': ['ООО Кёнигкамин - салон «Архидея»',], 'ki': ['Компания «Печар»', '&quot;Домашний очаг&quot;',], 'kt': ['Печной дом Макаровых ', 'Печной дом Макаровых',], 'ks': ['Компания &quot;Трубочист&quot;',], 'kr': ['ООО «Арт-Тон камины»', 'Компания &quot;Онтарио&quot;',], 'lp': ['КАМИНЫ  «Южный Портал»',], 'mc': ['Печной Центр &quot;ЯСЕНЕВО&quot;', 'Печной Центр &quot;Дмитровский&quot;', 'ООО &quot;Интеркамин&quot; - Вешняки', 'ООО &quot;Интеркамин&quot; - Чертаново', 'Trubomaster - Ярославское шоссе',], 'nn': ['И.П. &quot;Беляков А.Г.&quot;', 'И.П. &quot;Базан И.Л.&quot;', 'Компания &quot;ПечкинЪ&quot;',], 'nv': ['Компания «Камины Арт-Тон»',], 'om': ['Магазин &quot;Камины Европы&quot;',], 'pe': ['Центр Печей и Каминов',], 'pr': ['Салон &quot;Камины&quot;',], 'kl': ['Печной Центр &quot;КАМИ&quot;',], 'cr': ['Салон &quot;Горыныч&quot;',], 'ta': ['ООО &quot;Арт-Камин&quot;',], 'ss': ['ООО СТРОЙРЕСУРС  г. Тольятти', 'Магазин &quot;Студия Каминов&quot;', 'Магазин  &quot;Печи и камины&quot;', 'ООО СТРОЙРЕСУРС - г. Самара',], 'le': ['Студия каминов', 'ООО &quot;Максима+&quot; м. Балтийская (склад)', 'Печной центр &quot;Выбор и Качество&quot;', 'OOO &quot;Тепло в дом&quot;', 'OOO &quot;Тепло в дом&quot; - Колпино', 'OOO &quot;Тепло в дом&quot; - Тосно', 'ООО &quot;Максима+&quot; м. Ленинский пр.', 'ООО &quot;Максима+&quot; м. Чёрная речка', 'ООО &quot;СеверСистем&quot; ', 'Studio 34', 'ПЕЧИ на Софийской 66', 'ПИТЕР КАМИН!', 'АртКамин',], 'sh': ['Компания «Газлайн» - ул. Амурская', 'Компания «Газлайн» - ул. Ленина',], 'sv': ['Магазин &quot;ПеЧки66.ру&quot;', 'Магазин «Камины и фонтаны»',], 'tl': ['Тульский печной центр', 'Камины, печи, дымоходы',], 'ha': ['Магазин &quot;Камины/Печи/Дымоходы&quot;',], 'cl': ['Компания &quot;Мир Каминов&quot;',], 'yr': ['Елисеев - монтаж печей и каминов',], };
+		let ObjectNew = {};
+			let objRegions = [
+					{ item: 'da', name: 'Республика Дагестан' },
+					{ item: 'cr', name: 'Республика Крым' },
+					{ item: 'sa', name: 'Республика Саха (Якутия)' },
+					{ item: 'so', name: 'Республика Северная Осетия' },
+					{ item: 'kb', name: 'Республика Кабардино-Балкария' },
+					{ item: 'kc', name: 'Карачаево-Черкесия' },
+					{ item: 'st', name: 'Ставропольский край' },
+					{ item: 'ks', name: 'Краснодарский край' },
+					{ item: 'ro', name: 'Ростовская область' },
+					{ item: 'kk', name: 'Республика Калмыкия' },
+					{ item: 'as', name: 'Астраханская область' },
+					{ item: 'ad', name: 'Республика Адыгея' },
+					{ item: 'vl', name: 'Волгоградская область' },
+					{ item: 'vn', name: 'Воронежская область' },
+					{ item: 'bl', name: 'Белгородская область' },
+					{ item: 'ky', name: 'Курская область' },
+					{ item: 'or', name: 'Орловская область' },
+					{ item: 'lp', name: 'Липецкая область' },
+					{ item: 'tl', name: 'Тульская область' },
+					{ item: 'bn', name: 'Брянская область' },
+					{ item: 'kj', name: 'Калужская область' },
+					{ item: 'sm', name: 'Смоленская область' },
+					{ item: 'mc', name: 'Москва и Московская область' },
+					{ item: 'rz', name: 'Рязанская область' },
+					{ item: 'tb', name: 'Тамбовская область' },
+					{ item: 'kn', name: 'Калининградская область' },
+					{ item: 'ps', name: 'Псковская область' },
+					{ item: 'no', name: 'Новгородская область' },
+					{ item: 'tr', name: 'Тверская область' },
+					{ item: 'vm', name: 'Владимирская область' },
+					{ item: 'pz', name: 'Пензенская область' },
+					{ item: 'sr', name: 'Саратовская область' },
+					{ item: 'mr', name: 'Республика Мордовия' },
+					{ item: 'cu', name: 'Чувашская Республика' },
+					{ item: 'ul', name: 'Ульяновская область' },
+					{ item: 'ss', name: 'Самарская область' },
+					{ item: 'ob', name: 'Оренбургская область' },
+					{ item: 'nn', name: 'Нижегородская область' },
+					{ item: 'ml', name: 'Республика Марий Эл' },
+					{ item: 'ta', name: 'Республика Татарстан' },
+					{ item: 'iv', name: 'Ивановская область' },
+					{ item: 'yr', name: 'Ярославская область' },
+					{ item: 'kt', name: 'Костромская область' },
+					{ item: 'le', name: 'Санкт-Петербург и Ленинградская область' },
+					{ item: 'ki', name: 'Кировская область' },
+					{ item: 'bs', name: 'Республика Башкортостан' },
+					{ item: 'cl', name: 'Челябинская область' },
+					{ item: 'ud', name: 'Удмуртская Республика' },
+					{ item: 'pe', name: 'Пермская область' },
+					{ item: 'sv', name: 'Свердловская область' },
+					{ item: 'ku', name: 'Курганская область' },
+					{ item: 'ko', name: 'Республика Коми' },
+					{ item: 'mu', name: 'Мурманская область' },
+					{ item: 'kl', name: 'Республика Карелия' },
+					{ item: 'vo', name: 'Вологодская область' },
+					{ item: 'ar', name: 'Архангельская область' },
+					{ item: 'tu', name: 'Тюменская область' },
+					{ item: 'ne', name: 'Ненецкий автономный округ' },
+					{ item: 'om', name: 'Омская область' },
+					{ item: 'ht', name: 'Ханты-Мансийский автономный округ' },
+					{ item: 'ya', name: 'Ямало-Ненецкий автономный округ' },
+					{ item: 'kr', name: 'Красноярский край' },
+					{ item: 'tm', name: 'Томская область' },
+					{ item: 'nv', name: 'Новосибирская область' },
+					{ item: 'al', name: 'Алтайский край' },
+					{ item: 'km', name: 'Кемеровская область' },
+					{ item: 'lt', name: 'Республика Алтай' },
+					{ item: 'tv', name: 'Республика Тыва' },
+					{ item: 'hk', name: 'Республика Хакасия' },
+					{ item: 'ir', name: 'Иркутская область' },
+					{ item: 'br', name: 'Республика Бурятия' },
+					{ item: 'zb', name: 'Забайкальский край' },
+					{ item: 'am', name: 'Амурская область' },
+					{ item: 'ch', name: 'Чукотский автономный округ' },
+					{ item: 'ha', name: 'Хабаровский край' },
+					{ item: 'eu', name: 'Еврейская автономная область' },
+					{ item: 'pr', name: 'Приморский край' },
+					{ item: 'ma', name: 'Магаданская область' },
+					{ item: 'sh', name: 'Сахалинская область' },
+					{ item: 'ka', name: 'Камчатский Край' },
+					{ item: 'in', name: 'Республика Ингушетия' }
+				];
+	</script>
+
+	<div class="map_rf">
+
+		<div id="vmap" class="map"></div>
+
+
+		<div class="vmap__info">
+			<div class="vmap__info-yes"> <span></span></span>
+				<p>- в регионе есть дилеры</p>
+			</div>
+			<div class="vmap__info-no"><span></span></span>
+				<p>- в регионе нет дилеров</p>
+			</div>
+		</div>
+
+		<div id="selectRegion" class="vmap__select">
+			<div class="vmap__select-form">
+				<label><span>Введите Ваш регион:</span> <input type="text" v-model="regionName" /></label>
+				<label><span>Или выберете из списка:</span>
+					<select v-model="selecteRegion" @change="getRegion">
+						<option v-for="region in regions" v-bind:value="region">{{region.name}}</option>
+					</select>
+
+				</label>
+			</div>
+
+			<ul class="vmap__select-list">
+				<li v-for="elemRegion in filteredList"><a v-bind:href="'/partners/'+elemRegion.item+'/'" v-bind:id="elemRegion.item">{{ elemRegion.name }}</a></li>
+			</ul>
+		</div>
+
+	</div>
+
+<script>
+	var reg = new Vue({
+		el: '#selectRegion',
+		data: {
+			regionName: '',
+			selecteRegion: '',
+			//selecteRegionUrl: '',
+			regions: objRegions
+		},
+		computed: {
+			filteredList: function () {
+				var comp = this.regionName;
+				return this.regions.filter(function (elem) {
+					if (comp === '') return false;
+					else {
+						return elem.name.toLowerCase().indexOf(comp.toLowerCase()) > -1;
+					}
+				})
+			}
+		},
+		methods: {
+			getRegion: function () {
+				window.location.href = '/partners/' + this.selecteRegion.item + '/';
+			}
+		}
+	})
+</script>
+
+<hr class="hr_separator _mt_3">
+
+<div class="dealer_wrap">
+	<section class="dealer_item">
+		<h3 class="dealer_name"><a href="#" class="dealer_link">Студия каминов</a></h3>
+		<ul class="dealer_list">
+			<li><b>Адрес</b>: г. Санкт-Петербург, ул.Рабочая, д.3 (территория Старо-Паново)</li>
+			<li><b>Время работы:</b> Пн-Пт с 10:00 до 19:00,Сб с 10.00 до 17.00,Вс с 11.00 до 16:00</li>
+			<li><b>Тел:</b> +7 (812)919-08-12</li>
+			<li><b>E-mail:</b> <a href="#">info@kamin.studio</a></li>
+			<li><b>Сайт:</b> <a href="#">kamin.studio</a></li>
+		</ul>
+	</section>
+	<section class="dealer_item">
+		<h3 class="dealer_name"><a href="#" class="dealer_link">Студия каминов</a></h3>
+		<ul class="dealer_list">
+			<li><span>Адрес:</span>г. Санкт-Петербург, ул.Рабочая, д.3 (территория Старо-Паново)</li>
+			<li><span>Время работы:</span>Пн-Пт с 10:00 до 19:00,Сб с 10.00 до 17.00,Вс с 11.00 до 16:00</li>
+			<li><span>Тел:</span>+7 (812)919-08-12</li>
+			<li><span>E-mail:</span><a href="#">info@kamin.studio</a></li>
+			<li><span>Сайт:</span> <a href="#">kamin.studio</a></li>
+		</ul>
+	</section>
+	<section class="dealer_item">
+		<h3 class="dealer_name"><a href="#" class="dealer_link">Студия каминов</a></h3>
+		<ul class="dealer_list">
+			<li>Адрес: г. Санкт-Петербург, ул.Рабочая, д.3 (территория Старо-Паново)</li>
+			<li>Время работы: Пн-Пт с 10:00 до 19:00,Сб с 10.00 до 17.00,Вс с 11.00 до 16:00</li>
+			<li>Тел: +7 (812)919-08-12</li>
+			<li>E-mail: <a href="#">info@kamin.studio</a></li>
+			<li>Сайт: <a href="#">kamin.studio</a></li>
+		</ul>
+	</section>
+	<section class="dealer_item">
+		<h3 class="dealer_name"><a href="#" class="dealer_link">Студия каминов</a></h3>
+		<ul class="dealer_list">
+			<li>Адрес: г. Санкт-Петербург, ул.Рабочая, д.3 (территория Старо-Паново)</li>
+			<li>Время работы: Пн-Пт с 10:00 до 19:00,Сб с 10.00 до 17.00,Вс с 11.00 до 16:00</li>
+			<li>Тел: +7 (812)919-08-12</li>
+			<li>E-mail: <a href="#">info@kamin.studio</a></li>
+			<li>Сайт: <a href="#">kamin.studio</a></li>
+		</ul>
+	</section>
+	<section class="dealer_item">
+		<h3 class="dealer_name"><a href="#" class="dealer_link">Студия каминов</a></h3>
+		<ul class="dealer_list">
+			<li>Адрес: г. Санкт-Петербург, ул.Рабочая, д.3 (территория Старо-Паново)</li>
+			<li>Время работы: Пн-Пт с 10:00 до 19:00,Сб с 10.00 до 17.00,Вс с 11.00 до 16:00</li>
+			<li>Тел: +7 (812)919-08-12</li>
+			<li>E-mail: <a href="#">info@kamin.studio</a></li>
+			<li>Сайт: <a href="#">kamin.studio</a></li>
+		</ul>
+	</section>
+	<section class="dealer_item">
+		<h3 class="dealer_name"><a href="#" class="dealer_link">Студия каминов</a></h3>
+		<ul class="dealer_list">
+			<li>Адрес: г. Санкт-Петербург, ул.Рабочая, д.3 (территория Старо-Паново)</li>
+			<li>Время работы: Пн-Пт с 10:00 до 19:00,Сб с 10.00 до 17.00,Вс с 11.00 до 16:00</li>
+			<li>Тел: +7 (812)919-08-12</li>
+			<li>E-mail: <a href="#">info@kamin.studio</a></li>
+			<li>Сайт: <a href="#">kamin.studio</a></li>
+		</ul>
+	</section>
+	<section class="dealer_item">
+		<h3 class="dealer_name"><a href="#" class="dealer_link">Студия каминов</a></h3>
+		<ul class="dealer_list">
+			<li>Адрес: г. Санкт-Петербург, ул.Рабочая, д.3 (территория Старо-Паново)</li>
+			<li>Время работы: Пн-Пт с 10:00 до 19:00,Сб с 10.00 до 17.00,Вс с 11.00 до 16:00</li>
+			<li>Тел: +7 (812)919-08-12</li>
+			<li>E-mail: <a href="#">info@kamin.studio</a></li>
+			<li>Сайт: <a href="#">kamin.studio</a></li>
+		</ul>
+	</section>
+	<section class="dealer_item">
+		<h3 class="dealer_name"><a href="#" class="dealer_link">Студия каминов</a></h3>
+		<ul class="dealer_list">
+			<li>Адрес: г. Санкт-Петербург, ул.Рабочая, д.3 (территория Старо-Паново)</li>
+			<li>Время работы: Пн-Пт с 10:00 до 19:00,Сб с 10.00 до 17.00,Вс с 11.00 до 16:00</li>
+			<li>Тел: +7 (812)919-08-12</li>
+			<li>E-mail: <a href="#">info@kamin.studio</a></li>
+			<li>Сайт: <a href="#">kamin.studio</a></li>
+		</ul>
+	</section>
+	<section class="dealer_item">
+		<h3 class="dealer_name"><a href="#" class="dealer_link">Студия каминов</a></h3>
+		<ul class="dealer_list">
+			<li>Адрес: г. Санкт-Петербург, ул.Рабочая, д.3 (территория Старо-Паново)</li>
+			<li>Время работы: Пн-Пт с 10:00 до 19:00,Сб с 10.00 до 17.00,Вс с 11.00 до 16:00</li>
+			<li>Тел: +7 (812)919-08-12</li>
+			<li>E-mail: <a href="#">info@kamin.studio</a></li>
+			<li>Сайт: <a href="#">kamin.studio</a></li>
+		</ul>
+	</section>
+	<section class="dealer_item">
+		<h3 class="dealer_name"><a href="#" class="dealer_link">Студия каминов</a></h3>
+		<ul class="dealer_list">
+			<li>Адрес: г. Санкт-Петербург, ул.Рабочая, д.3 (территория Старо-Паново)</li>
+			<li>Время работы: Пн-Пт с 10:00 до 19:00,Сб с 10.00 до 17.00,Вс с 11.00 до 16:00</li>
+			<li>Тел: +7 (812)919-08-12</li>
+			<li>E-mail: <a href="#">info@kamin.studio</a></li>
+			<li>Сайт: <a href="#">kamin.studio</a></li>
+		</ul>
+	</section>
+	<section class="dealer_item">
+		<h3 class="dealer_name"><a href="#" class="dealer_link">Студия каминов</a></h3>
+		<ul class="dealer_list">
+			<li>Адрес: г. Санкт-Петербург, ул.Рабочая, д.3 (территория Старо-Паново)</li>
+			<li>Время работы: Пн-Пт с 10:00 до 19:00,Сб с 10.00 до 17.00,Вс с 11.00 до 16:00</li>
+			<li>Тел: +7 (812)919-08-12</li>
+			<li>E-mail: <a href="#">info@kamin.studio</a></li>
+			<li>Сайт: <a href="#">kamin.studio</a></li>
+		</ul>
+	</section>
+	<section class="dealer_item">
+		<h3 class="dealer_name"><a href="#" class="dealer_link">Студия каминов</a></h3>
+		<ul class="dealer_list">
+			<li>Адрес: г. Санкт-Петербург, ул.Рабочая, д.3 (территория Старо-Паново)</li>
+			<li>Время работы: Пн-Пт с 10:00 до 19:00,Сб с 10.00 до 17.00,Вс с 11.00 до 16:00</li>
+			<li>Тел: +7 (812)919-08-12</li>
+			<li>E-mail: <a href="#">info@kamin.studio</a></li>
+			<li>Сайт: <a href="#">kamin.studio</a></li>
+		</ul>
+	</section>
+	<section class="dealer_item">
+		<h3 class="dealer_name"><a href="#" class="dealer_link">Студия каминов</a></h3>
+		<ul class="dealer_list">
+			<li>Адрес: г. Санкт-Петербург, ул.Рабочая, д.3 (территория Старо-Паново)</li>
+			<li>Время работы: Пн-Пт с 10:00 до 19:00,Сб с 10.00 до 17.00,Вс с 11.00 до 16:00</li>
+			<li>Тел: +7 (812)919-08-12</li>
+			<li>E-mail: <a href="#">info@kamin.studio</a></li>
+			<li>Сайт: <a href="#">kamin.studio</a></li>
+		</ul>
+	</section>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+	<!--END text-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</main>
+<!--#include virtual="/parts/footer.html" -->

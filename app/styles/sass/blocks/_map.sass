@@ -1,0 +1,169 @@
+.map_rf
+	max-width: 1140px
+	margin: 0 auto
+.map
+	width: auto
+	height: 550px
+
+.vmap__info
+	display: flex
+	justify-content: flex-end
+	margin-bottom: 20px
+
+.vmap__info-no, .vmap__info-yes
+	display: flex
+	margin-right: 1rem
+
+.vmap__info-no span, .vmap__info-yes span
+	display: block
+	height: 20px
+	width: 20px
+
+.vmap__info-no p, .vmap__info-yes p
+	padding-left: 10px
+	line-height: 20px
+
+.vmap__info-yes span
+	background-color: #3a4c54
+
+.vmap__info-no span
+	background-color: #84969f
+
+
+.vmap__select
+	width: 100%
+	margin-bottom: 15px
+	padding-bottom: 25px
+
+.vmap__select-form
+	width: 100%
+	display: flex
+	flex-wrap: wrap
+
+.vmap__select-form label
+	font-weight: 400
+	margin-right: 1rem
+	margin-bottom: 1rem
+
+.vmap__select-form input
+	width: 300px
+	border-width: 2px
+	padding: 1px 5px
+	margin-left: .5rem
+	margin-right: 10px
+	padding-left: 5px
+	font-style: italic
+	border: 1px solid rgb(118, 118, 118)
+	border-radius: 2px
+
+.vmap__select-form input:focus
+	outline-color: rgba(169, 169, 169, .3)
+
+.vmap__select-form select
+	width: auto
+	border-width: 1px
+	padding: 4px 3px
+	margin-left: .5rem
+	margin-right: 10px
+	border-radius: 2px
+
+.vmap__select-form select:focus
+	outline-color: rgba(169, 169, 169, .3)
+
+.vmap__select-list li
+	font-size: 1rem
+	a
+		color: #337ab7
+		text-decoration: none
+		transition: color .2s cubic-bezier(0,0,.58,1), text-decoration .2s cubic-bezier(0,0,.58,1)
+		&:hover
+			color: #23527c
+			text-decoration: underline
+
+.vmap__select-list li:first-child
+	margin-top: 1rem
+.hr_separator
+	border-bottom: 1px solid rgba(169, 169, 169, .3)
+
+
+.dealer_wrap
+	display: flex
+	flex-wrap: wrap
+	color:#555
+	padding-top: 1rem
+	padding-bottom: 1rem
+.dealer_item
+	width: 50%
+	padding: 1rem
+	h3
+		font-weight: 500
+
+.dealer_name
+	font-size: 1.4rem
+	margin-bottom: 1rem
+
+
+.dealer_link
+	text-decoration: underline
+	color: #555
+	transition: color .17s cubic-bezier(0,0,.58,1)
+	transition: color .2s cubic-bezier(0,0,.58,1), text-decoration .2s cubic-bezier(0,0,.58,1)
+	&:hover
+		color: #23527c
+		text-decoration: underline
+
+.dealer_list
+	list-style: none
+	padding-left: 0
+	li
+		line-height: 1.4
+		margin-bottom: .3rem
+
+		span
+			margin-right: .5rem
+			font-weight: 500
+
+	a
+		color: #337ab7
+		text-decoration: none
+		transition: color .2s cubic-bezier(0,0,.58,1), text-decoration .2s cubic-bezier(0,0,.58,1)
+		&:hover
+			color: #23527c
+			text-decoration: underline
+
+
+@include media-breakpoint-down(xl)
+	.map
+		height: 500px
+	.vmap__select-form label span
+		width: 185px
+		display: inline-block
+		margin-right: .5rem
+	.vmap__select-form input
+		width: 346px
+		margin-left: 0
+	.vmap__select-form select
+		margin-left: 0
+
+@include media-breakpoint-down(md)
+	.map
+		height: 450px
+	.dealer_item
+		width: 100%
+
+
+@include media-breakpoint-down(sm)
+	.dealer_wrap
+		border-bottom: 1px solid #ccc
+	.vmap__info
+		flex-wrap: wrap
+
+
+
+
+@media (max-width: 400px)
+	.vmap__select-form input
+		width: 100%
+
+	.vmap__select-form select
+		width: 100%

@@ -246,4 +246,23 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 	window.onresize = funcItemsHeight;
 
+
+	$('.faq_title').click(function () {
+		let element = $(this).parent('.faq_item');
+		let elemContent = $(this).next();
+
+		if (element.hasClass('open')){
+			element.removeClass('open');
+			} else {
+			element.addClass('open');
+		}
+		elemContent.slideToggle(300);
+
+	});
+
+
+
+
+
+
 });

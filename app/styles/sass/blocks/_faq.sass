@@ -1,0 +1,63 @@
+.faq_item
+	border: 1px solid #ececec
+	border-radius: 5px
+	margin-bottom: 10px
+	padding: 10px 15px
+	background-color: #ececec
+	&:hover
+		box-shadow: 0 0 2px rgba(122,122,122,.5)
+
+.faq_title
+	display: flex
+	cursor: pointer
+	h3
+		font-size: 1.2rem
+		font-weight: 500
+		color: #555
+		margin: 0
+.faq_icon
+	display: inline-block
+	width: 16px
+	height: 16px
+	position: relative
+	margin-right: 14px
+	i
+		position: absolute
+		display: inline-block
+		width: 16px
+		height: 16px
+		//right: 18px
+		left: 0
+		top: 1px
+
+		&:before,
+		&:after
+			position: absolute
+			content: ''
+			width: 15px
+			height: 2px
+			background-color: lighten(#777777, 25%)
+			transition: transform 250ms ease
+		&:before
+			transform: translate(-5px,8px) rotate(45deg)
+		&:after
+			transform: translate(5px,8px) rotate(-45deg)
+
+.faq_txt
+	display: none
+	overflow: hidden
+	margin-top: 15px
+	padding-top: 15px
+	color: #555
+	transition: max-height .5s ease-out
+.open
+	background-color: transparent
+	&:hover
+		box-shadow: none
+	i
+		&:before
+			transform: translate(5px,8px) rotate(45deg)
+		&:after
+			transform: translate(-5px,8px) rotate(-45deg)
+	.faq_txt
+		border-top: 1px solid #ccc
