@@ -246,7 +246,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 	window.onresize = funcItemsHeight;
 
-
+	/** - Акардион - вопросы */
 	$('.faq_title').click(function () {
 		let element = $(this).parent('.faq_item');
 		let elemContent = $(this).next();
@@ -257,8 +257,80 @@ document.addEventListener('DOMContentLoaded', () => {
 			element.addClass('open');
 		}
 		elemContent.slideToggle(300);
-
 	});
+
+
+	document.getElementById('modalShow').addEventListener('click', function() {
+		$.fancybox.open({
+			src: '#modal',
+			type: 'inline'
+		});
+		getAnswer();
+	});
+
+
+	function getAnswer() {
+		let modalForm = document.getElementById('modalForm');
+
+		let CollBackName = document.getElementById('CollBackName');
+		let CollBackMail = document.getElementById('CollBackMail');
+		let CollBackNameValid = document.getElementById('CollBackNameValid');
+		let CollBackMailValid = document.getElementById('CollBackMailValid');
+		let modalCheck = document.getElementById('modalCheck')
+		let modalBtn = document.getElementById('modalBtn');
+		let valid = true;
+
+		CollBackName.onfocus = function () {
+			if (this.classList.contains('invalid')) {
+				this.classList.remove('invalid');
+				CollBackNameValid.innerText = "";
+				valid = true;
+			}
+		};
+		CollBackMail.onfocus = function () {
+			if (this.classList.contains('invalid')) {
+				this.classList.remove('invalid');
+				CollBackMailValid.innerText = "";
+				valid = true;
+			}
+		};
+
+
+
+		modalBtn.onclick = function(event){
+			event.preventDefault();
+
+			if (CollBackName.value.trim() === '') {
+				if (!CollBackNameValid.classList.contains('invalid')) CollBackNameValid.classList.add('invalid');
+				CollBackNameValid.innerText = 'Укажите Ваше имя';
+				valid = false;
+			}
+
+			if(CollBackMail.value.match(/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/) == null){
+				if(!CollBackMailValid.classList.contains('invalid'))  CollBackMailValid.classList.add('invalid');
+					CollBackMailValid.innerText = 'Укажите правильный E-mail';
+					valid = false;
+			}
+
+			if(modalCheck.checked == false) valid = false;
+
+			console.log(CollBackNameValid);
+
+
+		}
+
+
+
+
+
+
+
+
+	}
+
+
+
+
 
 
 

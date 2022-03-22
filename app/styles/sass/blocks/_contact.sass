@@ -1,0 +1,50 @@
+.contact_info_wrap
+	display: flex
+	justify-content: space-between
+	flex-wrap: wrap
+	color: #555
+	margin-bottom: 2rem
+
+.contact_info_item
+	width: calc( 50% - 30px )
+	margin-bottom: 1rem
+	line-height: 1.5
+	h4
+		font-size: 1rem
+		margin-bottom: .3rem
+
+
+.contact_h2
+	font-size: 1.7rem
+	font-weight: 400
+	text-align: center
+	color: #444
+.contact_scheme_wrap
+	display: flex
+	justify-content: space-between
+	flex-wrap: wrap
+.contact_scheme_item
+	width: calc( 50% - 30px )
+	h3
+		font-size: 1.2rem
+		font-weight: normal
+		color: #444
+.contact_scheme_link
+	display: block
+	height: 100%
+@include media-breakpoint-down(xxl)
+	.contact_scheme_item
+		width: calc( 50% - 20px )
+
+@include media-breakpoint-down(xl)
+	.contact_scheme_item
+		width: calc( 50% - 15px )
+
+@include media-breakpoint-down(lg)
+	.contact_scheme_item
+		width: 100%
+		margin-bottom: 2rem
+
+@include media-breakpoint-down(md)
+	.contact_info_item
+		width: 100%

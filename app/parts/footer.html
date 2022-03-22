@@ -215,6 +215,36 @@
 	C122.12155,146.73302,126.93602,138.4617,122.27562,129.28772z" />
 	</symbol>
 </svg>
+<div class="modal" style="display: none;" id="modal">
+	<div class="modal_top">
+		<h3>Задайте вопрос</h3>
+	</div>
+
+	<form action="#" method="post" class="modal_form" id="modalForm">
+
+		<div class="modal_fild">
+			<label>Ваше имя<span class="req">*</span></label>
+			<input type="text" name="snitch" id="CollBackName" value="" required="" placeholder="Иван Иванович">
+			<span id="CollBackNameValid" class="fild_massege"></span><!-- /.invalid -->
+		</div>
+		<div class="modal_fild">
+			<label>E-mail адрес<span class="req">*</span></label>
+			<input type="email" name="email" id="CollBackMail" value="">
+			<span id="CollBackMailValid" class="fild_massege"></span>
+		</div>
+		<div class="modal_fild">
+			<label>Сообщение</label>
+			<textarea name="message" rows="5"></textarea>
+		</div>
+		<div class="modal_agreement">
+			<input type="checkbox" id="modalCheck" class="modal_check" name="agreement" value="yes" checked="checked" required="">
+			<label>Я согласен на <a href="/agreement" target="_blank">обработку персональных данных</a></label>
+		</div>
+		<div class="modal_call_footer">
+			<button class="modal_btn" id="modalBtn">Отправить</button>
+		</div>
+	</form>
+</div>
 
 	<script src="js/jquery-3.6.0.min.js"></script>
 
