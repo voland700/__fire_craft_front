@@ -260,6 +260,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 
 
+	/** Вызов модального окна формы обратной связи*/
 	document.getElementById('modalShow').addEventListener('click', function() {
 		$.fancybox.open({
 			src: '#modal',
@@ -281,15 +282,16 @@ document.addEventListener('DOMContentLoaded', () => {
 		let valid = true;
 
 		CollBackName.onfocus = function () {
-			if (this.classList.contains('invalid')) {
-				this.classList.remove('invalid');
+			if(CollBackNameValid.classList.contains('invalid')) {
+				CollBackNameValid.classList.remove('invalid');
 				CollBackNameValid.innerText = "";
 				valid = true;
 			}
 		};
+
 		CollBackMail.onfocus = function () {
-			if (this.classList.contains('invalid')) {
-				this.classList.remove('invalid');
+			if (CollBackMailValid.classList.contains('invalid')) {
+				CollBackMailValid.classList.remove('invalid');
 				CollBackMailValid.innerText = "";
 				valid = true;
 			}
@@ -314,7 +316,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 			if(modalCheck.checked == false) valid = false;
 
-			console.log(CollBackNameValid);
+			console.log(valid);
 
 
 		}
