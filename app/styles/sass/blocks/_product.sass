@@ -33,6 +33,61 @@
 	max-height: 100%
 	margin: auto
 
+.product_label_list
+	display: inline-block
+	max-width: 50%
+	position: absolute
+	right: 0
+	top: 20px
+	z-index: 10
+.product_lable
+	display: inline-block
+	border-radius: 0.25rem
+	color: #fff
+	//display: inline
+	font-size: 90%
+	font-weight: 700
+	letter-spacing: .5px
+	text-transform: uppercase
+	line-height: 1
+	float: right
+	margin-left: 2px
+	margin-right: 0
+	margin-bottom: 2px
+
+	//padding: 0.3rem 0.75rem 0.325rem
+	padding: 0.45rem 1.1rem 0.45rem
+	text-align: center
+	vertical-align: baseline
+	white-space: nowrap
+
+.product_lable.new
+	background-color: $new
+.product_lable.hit
+	background-color: $hit
+.product_lable.tip
+	background-color: $tip
+.product_lable.discont
+	background-color: $discont
+
+.product_discont
+	display: block
+	position: absolute
+	bottom: 70px
+	right: 0
+	width: 65px
+	height: 65px
+	border-radius: 50%
+	background: url(/images/src/icons/disc.png) no-repeat center
+	background-size: cover
+	color: #fff
+	text-align: center
+	text-shadow: 0 1px 0 #2e3a40
+	font-weight: 500
+	font-size: 22px
+	line-height: 65px
+	background-color: #fff
+
 .product_prev_wrap
 	display: flex
 	justify-content: space-around
@@ -62,7 +117,8 @@
 		display: block
 		padding-top: 100%
 .product_prev.active
-	border-color: $dark
+	border-color: #adb5bd
+
 
 
 .product_prev_link
@@ -119,6 +175,19 @@
 		margin-bottom: 0
 .product_property
 	margin-bottom: 1.5rem
+.product_tab
+	table
+		width: 100%
+		border: 1px solid #ddd
+		border-radius: 3px
+		font-size: 1rem
+		tr:nth-child(odd)
+			background-color: #f9f9f9
+		td
+			padding: 8px
+			line-height: 1.42857143
+			vertical-align: top
+			border: 1px solid #ddd
 .product_property_tbl
 	width: 100%
 	border: 1px solid #ddd
@@ -131,7 +200,6 @@
 		line-height: 1.42857143
 		vertical-align: top
 		border: 1px solid #ddd
-
 
 .product_offers_wrap
 	border-bottom: 1px solid #eee
@@ -313,7 +381,7 @@
 	width: 46px
 	height: 35px
 	overflow: hidden
-	filter: grayscale(.9)
+	filter: grayscale(.7)
 	background-image: url(/images/src/icons/docs_types.png)
 	background-repeat: no-repeat
 
@@ -382,6 +450,8 @@
 	.product_contact_text
 		font-size: .95rem
 		letter-spacing: .1rem
+	.product_discont
+		bottom: 60px
 
 @include media-breakpoint-down(xl)
 	.product_images_wrap
@@ -399,10 +469,10 @@
 	.product_offers_info span
 		display: inline-block
 		width: 100%
-
-	.product_documents
 	.product_doc_item
 		width: 100%
+	.product_discont
+		bottom: 40px
 @include media-breakpoint-down(md)
 	.prodact_wrap
 		flex-wrap: wrap
@@ -434,6 +504,8 @@
 	.product_offers_info span
 		display: inline
 		width: auto
+	.product_discont
+		bottom: 70px
 @include media-breakpoint-down(sm)
 	.product_images_wrap
 		width: 100%
